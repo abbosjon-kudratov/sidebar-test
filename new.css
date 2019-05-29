@@ -1,0 +1,176 @@
+*{
+  font-family: 'Poppins', sans-serif;
+}
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 20%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+}
+
+
+.sidenav p {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+p.norm{
+  font-size: 15px;
+}
+.dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+#menu-icon {
+    position: fixed;
+    right: 60px;
+    top: 40px;
+    height: 50px;
+    width: 60px;
+}
+#menu-icon:hover {
+    cursor: pointer;
+}
+#menu-icon #hamburger {
+    position:absolute;
+    
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 4px;
+    width: 50px;
+    background-color: #22313F;
+    transition: all .3s;
+}
+#menu-icon #hamburger:before {
+    position:absolute;
+    content: '';
+    height: 4px;
+    width: 40px;
+    top: -10px;
+    background-color: #22313F;
+    transition: all .4s;
+}
+#menu-icon #hamburger:after {
+    position:absolute;
+    content: '';
+    height: 4px;
+    width: 40px;
+    top: 10px;
+    background-color: #22313F;
+    transition: all .3s;
+}
+#menu-icon:hover #hamburger::after,#menu-icon:hover #hamburger::before {
+    width: 50px;
+}
+#menu-icon:hover #hamburger{
+    width: 40px;
+}
+
+#menu-icon #hamburger.active{
+    background-color: rgba(0,0,0,0);
+}
+#menu-icon #hamburger.active:before{
+    transform: rotate(45deg);
+    top:0px;
+    width: 40px;
+}
+#menu-icon #hamburger.active:after{
+    transform: rotate(135deg);
+    top:0px;
+    width: 40px;
+}
+
+#sidebar {
+    position:fixed;
+    width: 300px;
+    left: -300px;
+    height: 100vh;
+    background-color:#22313F;
+    color:#FAFAFA;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 0% 100%, 0% 100%);
+    transition: all .5s;
+}
+#sidebar nav ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    list-style:none;
+    transform:translate(-50%, -50%);
+    text-align:center;
+
+}
+#sidebar nav ul li {
+    font-weight: 590;
+    font-size: 1.1em;
+    margin: 24px;
+} 
+#sidebar nav ul li:hover {
+    cursor:pointer;
+} 
+
+
+
+#sidebar.show-sidebar {
+    left: 0px;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transition: all .5s;
+}
+#sidebar.hide-sidebar {
+    left: -300px;
+    -webkit-clip-path: polygon(0% 0%, 0% 0%, 100% 100%, 0% 100%);
+    transition: all .5s;
+}
+#sidebar.original-sidebar {
+    position:fixed;
+    width: 300px;
+    left: -300px;
+    height: 100vh;
+    background-color:#22313F;
+    color:#FAFAFA;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 0% 100%, 0% 100%);
+    transition: all .5s;
+}
